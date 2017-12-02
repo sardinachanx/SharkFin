@@ -32,8 +32,6 @@ function purchase(item, price, date, category){
     }
 }
 
-
-
 let p = purchase('apples', 3, '11th nov','19047000');
 //tag(p);
 console.log(p);
