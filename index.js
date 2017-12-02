@@ -42,8 +42,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-
-
 app.get('/', function(request, response, next) {
   response.render('index.ejs', {
     PLAID_PUBLIC_KEY: PLAID_PUBLIC_KEY,
@@ -139,9 +137,7 @@ app.post('/transactions', function(request, response, next) {
 
     if(debug) transactions = transactionsResponse.transactions.concat(data1.transactions);
     //console.log('pulled ' + transactionsResponse.transactions.length + ' transactions');
-    
     transactions = transactions.map(entry => purchase(entry.name, entry.amount, entry.date, entry.category));
-
     response.json(transactions);
   });
 });
