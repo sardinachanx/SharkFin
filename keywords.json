@@ -8,7 +8,17 @@
   "map": {
     "food": "premium",
     "brand": "premium",
-    "alcohol": "habit",
-    "vgaming": "habit"
+    "alcohol": "alcohol",
+    "vgaming": "vgaming"
+
+  },
+  "category_map": {
+    "19013001" : "vgaming",
+    "19047000": "grocery",
+    "13005": "fdout",
+    "19012": "clothing",
+    "13": "alcohol",
+    "18" : "services",
+    "22" : "travel"
   }
 }
