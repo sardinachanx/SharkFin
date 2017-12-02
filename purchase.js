@@ -15,8 +15,10 @@ function purchase(item, price, date, category){
                 }
             }
         }
-        for(let id of Object.keys(category_map)){
-            if(category != null && category.startsWith(id) && !init.includes(category_map[id])){
+        let reversed = Object.keys(category_map).reverse();
+        for(let id of reversed){
+          console.log(id);
+          if(category != null && category.startsWith(id) && !init.includes(category_map[id])){
                 init.push(category_map[id]);
                 break;
             }
@@ -31,7 +33,7 @@ function purchase(item, price, date, category){
         attributes: attributes(item, price, date, category)
     }
 }
-let p = purchase('apples', 3, '11th nov','19047000');
+let p = purchase('kfc', 3, '11th nov','13005032');
 //tag(p);
 console.log(p);
 
