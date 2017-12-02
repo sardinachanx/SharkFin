@@ -14,11 +14,21 @@
   },
   "category_map": {
     "19013001" : "vgaming",
-    "19047000": "grocery",
-    "13005": "fdout",
-    "19012": "clothing",
-    "13": "alcohol",
+    "19047000" : "grocery",
+    "13005" : "fdout",
+    "19012" : "clothing",
+    "13" : "alcohol",
     "18" : "services",
     "22" : "travel"
+  },
+  "queue_map": {
+    "premium" : 0,
+    "alcohol" : 1,
+    "vgaming" : 2,
+    "grocery" : 3,
+    "fdout" : 4,
+    "clothing" : 5,
+    "services" : 6,
+    "travel" : 7
   }
 }
