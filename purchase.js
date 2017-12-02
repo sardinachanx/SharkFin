@@ -7,7 +7,7 @@ function purchase(item, price, date, categories){
     let attributes = function(item, price, date, categories){
         let init = [];
         for (let type of Object.keys(words)) {
-            for (let key of type) {
+            for (let key of words[type]) {
                 if (~item.indexOf(key)) {
                     console.log(item, key, type)
                     init.push(wordmap[type]);
