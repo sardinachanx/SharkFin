@@ -27,7 +27,8 @@ function purchase(item, price, date, categories){
     }
 }
 
-let p = purchase('wine', 3000, '11th nov',[]);
+/*let p = purchase('wine', 3000, '11th nov',[]);
 //tag(p);
-console.log(p);
+console.log(p);*/
 
+module.exports = purchase;
