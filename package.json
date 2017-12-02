@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "data-point": "file:node_modules/data-point",
+    "data-point": "1.5.x",
     "body-parser": "1.15.x",
     "ejs": "2.4.x",
     "envvar": "1.1.x",
