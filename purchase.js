@@ -16,7 +16,7 @@ function purchase(item, price, date, category){
             }
         }
         for(let id of Object.keys(category_map)){
-            if(category.startsWith(id) && !init.includes(category_map[id])){
+            if(category != null && category.startsWith(id) && !init.includes(category_map[id])){
                 init.push(category_map[id]);
                 break;
             }
@@ -31,7 +31,6 @@ function purchase(item, price, date, category){
         attributes: attributes(item, price, date, category)
     }
 }
-
 let p = purchase('apples', 3, '11th nov','19047000');
 //tag(p);
 console.log(p);
