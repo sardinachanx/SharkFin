@@ -137,7 +137,7 @@ app.post('/transactions', function(request, response, next) {
 
     if(debug) transactions = transactionsResponse.transactions.concat(data1.transactions);
     //console.log('pulled ' + transactionsResponse.transactions.length + ' transactions');
-    transactions = transactions.map(entry => purchase(entry.name, entry.amount, entry.date, entry.category));
+    transactions = transactions.map(entry => purchase(entry.name, entry.amount, entry.date, entry.category_id));
     response.json(transactions);
   });
 });
