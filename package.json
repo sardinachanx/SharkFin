@@ -1,0 +1,23 @@
+{
+  "name": "yhack-2017",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "data-point": "file:node_modules/data-point"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sardinachanx/yhack2017.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sardinachanx/yhack2017/issues"
+  },
+  "homepage": "https://github.com/sardinachanx/yhack2017#readme"
+}
