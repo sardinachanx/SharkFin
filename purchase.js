@@ -5,6 +5,7 @@ const words = keywords.words;
 const wordmap = keywords.map;
 const category_map = keywords.category_map;
 const queue_map = keywords.queue_map;
+const threshold_map = keywords.threshold_map;
 const debug = true;
 
 
@@ -58,12 +59,13 @@ exports.binPurchases = function (allPurchases){
   return init_array;
 }
 
-exports.checkRecurrence = function(queue){
+exports.isRecurrent = function(queue, label){
   var sum = 0.0;
   let currTime = Math.floor((new Date).getTime()/1000);
   let model = function(epoch_time, start_time){
     let days_elapsed = Math.floor((epoch_time - start_time)/(60*60*24));
     if(debug){
+      console.log(label);
       console.log("start_time " + new Date(start_time * 1000) + " epoch_time " + new Date(epoch_time * 1000));
       console.log(days_elapsed);
     }
@@ -75,11 +77,12 @@ exports.checkRecurrence = function(queue){
   for(let purchase of queue){
     sum += model(currTime, purchase.date);
   }
-  return sum;
+  console.log(sum/queue.length);
+  return sum/queue.length > threshold_map[label];
 }
 
 if(debug){
-  let p = exports.purchase('kfc', 3, '1506884160','13005032');
+  let p = exports.purchase('kfc', 30, '1506884160','13005032');
   //tag(p);
   console.log(p.item);
 
@@ -88,10 +91,11 @@ if(debug){
   function set(){
     let init = [];
     for(i = 0; i < 5; i++){
-      init.push(exports.purchase('kfc', 4, test_epoch_dates[i], '13005032'));
+      init.push(exports.purchase('steam', 4, test_epoch_dates[i], '19013001'));
     }
     return init;
   }
   //console.log(exports.binPurchases(set()));
-  console.log(exports.checkRecurrence(exports.binPurchases(set())[4]))
+  console.log(Object.keys(queue_map));
+  console.log(exports.isRecurrent(exports.binPurchases(set())[2],Object.keys(queue_map)[2]))
 }
