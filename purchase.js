@@ -2,6 +2,7 @@ const keywords = require("./keywords.json");
 const words = keywords.words;
 const wordmap = keywords.map;
 const category_map = keywords.category_map;
+const debug = false;
 
 //first tag indiv data, then tag again for long-term trends
 function purchase(item, price, date, category){
@@ -17,7 +18,6 @@ function purchase(item, price, date, category){
         }
         let reversed = Object.keys(category_map).reverse();
         for(let id of reversed){
-          console.log(id);
           if(category != null && category.startsWith(id) && !init.includes(category_map[id])){
                 init.push(category_map[id]);
                 break;
@@ -33,8 +33,11 @@ function purchase(item, price, date, category){
         attributes: attributes(item, price, date, category)
     }
 }
-let p = purchase('kfc', 3, '11th nov','13005032');
-//tag(p);
-console.log(p);
+
+if(debug){
+  let p = purchase('kfc', 3, '11th nov','13005032');
+  //tag(p);
+  console.log(p);
+}
 
 module.exports = purchase;
