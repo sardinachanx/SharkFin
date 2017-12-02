@@ -50,25 +50,48 @@ exports.binPurchases = function (allPurchases){
 
   var init_array = init(Object.keys(queue_map).length);
 
-  for(const purchase of allPurchases){
-    for(const attr of purchase.attributes){
+  for(let purchase of allPurchases){
+    for(let attr of purchase.attributes){
       init_array[queue_map[attr]].push(purchase);
     }
   }
   return init_array;
 }
 
+exports.checkRecurrence = function(queue){
+  var sum = 0.0;
+  let currTime = Math.floor((new Date).getTime()/1000);
+  let model = function(epoch_time, start_time){
+    let days_elapsed = Math.floor((epoch_time - start_time)/(60*60*24));
+    if(debug){
+      console.log("start_time " + new Date(start_time * 1000) + " epoch_time " + new Date(epoch_time * 1000));
+      console.log(days_elapsed);
+    }
+    if(days_elapsed <= 30){
+      return 1;
+    }
+    return Math.pow(Math.E, -((days_elapsed - 30)/12));
+  }
+  for(let purchase of queue){
+    sum += model(currTime, purchase.date);
+  }
+  return sum;
+}
+
 if(debug){
-  let p = exports.purchase('kfc', 3, '11th nov','13005032');
+  let p = exports.purchase('kfc', 3, '1506884160','13005032');
   //tag(p);
   console.log(p.item);
+
+  let test_epoch_dates = [/*1512154560,*//*1511636160,*./*1510858560,*//*1510772160,*/1509562560,1509216960,1508612160,1505501760,1503255360];
 
   function set(){
     let init = [];
     for(i = 0; i < 5; i++){
-      init.push(exports.purchase('kfc', 4, '11 nov', '13005032'));
+      init.push(exports.purchase('kfc', 4, test_epoch_dates[i], '13005032'));
     }
     return init;
   }
-  console.log(exports.binPurchases(set()));
+  //console.log(exports.binPurchases(set()));
+  console.log(exports.checkRecurrence(exports.binPurchases(set())[4]))
 }
