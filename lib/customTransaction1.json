@@ -554,6 +554,408 @@
             "transaction_id": "6We976WKRVcgD46om4l6fAK5A6RBJdUj4W1ND",
             "transaction_type": "unresolved",
             "product_name" : "Road bike cycling mountain bike"
+        },
+        {
+            "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
+            "account_owner": null,
+            "amount": 12,
+            "category": [
+                "Food and Drink",
+                "Restaurants",
+                "Fast Food"
+            ],
+            "category_id": "13005032",
+            "date": "2017-9-01",
+            "location": {
+                "address": null,
+                "city": null,
+                "lat": null,
+                "lon": null,
+                "state": null,
+                "store_number": "3322",
+                "zip": null
+            },
+            "name": "McDonald's",
+            "payment_meta": {
+                "by_order_of": null,
+                "payee": null,
+                "payer": null,
+                "payment_method": null,
+                "payment_processor": null,
+                "ppd_id": null,
+                "reason": null,
+                "reference_number": null
+            },
+            "pending": false,
+            "pending_transaction_id": null,
+            "transaction_id": "nVM8jDVWZNcpqE4loEX4iBXqBMoZNxHPvd3rw",
+            "transaction_type": "place",
+            "product_name" : "20 pc. Chicken McNuggets with fries"
+        },
+        {
+            "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
+            "account_owner": null,
+            "amount": 12,
+            "category": [
+                "Food and Drink",
+                "Restaurants",
+                "Fast Food"
+            ],
+            "category_id": "13005032",
+            "date": "2017-9-08",
+            "location": {
+                "address": null,
+                "city": null,
+                "lat": null,
+                "lon": null,
+                "state": null,
+                "store_number": "3322",
+                "zip": null
+            },
+            "name": "McDonald's",
+            "payment_meta": {
+                "by_order_of": null,
+                "payee": null,
+                "payer": null,
+                "payment_method": null,
+                "payment_processor": null,
+                "ppd_id": null,
+                "reason": null,
+                "reference_number": null
+            },
+            "pending": false,
+            "pending_transaction_id": null,
+            "transaction_id": "nVM8jDVWZNcpqE4loEX4iBXqBMoZNxHPvd3rw",
+            "transaction_type": "place",
+            "product_name" : "20 pc. Chicken McNuggets with fries"
+        },
+        {
+            "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
+            "account_owner": null,
+            "amount": 12,
+            "category": [
+                "Food and Drink",
+                "Restaurants",
+                "Fast Food"
+            ],
+            "category_id": "13005032",
+            "date": "2017-9-15",
+            "location": {
+                "address": null,
+                "city": null,
+                "lat": null,
+                "lon": null,
+                "state": null,
+                "store_number": "3322",
+                "zip": null
+            },
+            "name": "McDonald's",
+            "payment_meta": {
+                "by_order_of": null,
+                "payee": null,
+                "payer": null,
+                "payment_method": null,
+                "payment_processor": null,
+                "ppd_id": null,
+                "reason": null,
+                "reference_number": null
+            },
+            "pending": false,
+            "pending_transaction_id": null,
+            "transaction_id": "nVM8jDVWZNcpqE4loEX4iBXqBMoZNxHPvd3rw",
+            "transaction_type": "place",
+            "product_name" : "20 pc. Chicken McNuggets with fries"
+        },
+        {
+            "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
+            "account_owner": null,
+            "amount": 12,
+            "category": [
+                "Food and Drink",
+                "Restaurants",
+                "Fast Food"
+            ],
+            "category_id": "13005032",
+            "date": "2017-9-22",
+            "location": {
+                "address": null,
+                "city": null,
+                "lat": null,
+                "lon": null,
+                "state": null,
+                "store_number": "3322",
+                "zip": null
+            },
+            "name": "McDonald's",
+            "payment_meta": {
+                "by_order_of": null,
+                "payee": null,
+                "payer": null,
+                "payment_method": null,
+                "payment_processor": null,
+                "ppd_id": null,
+                "reason": null,
+                "reference_number": null
+            },
+            "pending": false,
+            "pending_transaction_id": null,
+            "transaction_id": "nVM8jDVWZNcpqE4loEX4iBXqBMoZNxHPvd3rw",
+            "transaction_type": "place",
+            "product_name" : "20 pc. Chicken McNuggets with fries"
+        },
+        {
+            "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
+            "account_owner": null,
+            "amount": 12,
+            "category": [
+                "Food and Drink",
+                "Restaurants",
+                "Fast Food"
+            ],
+            "category_id": "13005032",
+            "date": "2017-9-29",
+            "location": {
+                "address": null,
+                "city": null,
+                "lat": null,
+                "lon": null,
+                "state": null,
+                "store_number": "3322",
+                "zip": null
+            },
+            "name": "McDonald's",
+            "payment_meta": {
+                "by_order_of": null,
+                "payee": null,
+                "payer": null,
+                "payment_method": null,
+                "payment_processor": null,
+                "ppd_id": null,
+                "reason": null,
+                "reference_number": null
+            },
+            "pending": false,
+            "pending_transaction_id": null,
+            "transaction_id": "nVM8jDVWZNcpqE4loEX4iBXqBMoZNxHPvd3rw",
+            "transaction_type": "place",
+            "product_name" : "20 pc. Chicken McNuggets with fries"
+        },
+        {
+            "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
+            "account_owner": null,
+            "amount": 12,
+            "category": [
+                "Food and Drink",
+                "Restaurants",
+                "Fast Food"
+            ],
+            "category_id": "13005032",
+            "date": "2017-11-20",
+            "location": {
+                "address": null,
+                "city": null,
+                "lat": null,
+                "lon": null,
+                "state": null,
+                "store_number": "3322",
+                "zip": null
+            },
+            "name": "McDonald's",
+            "payment_meta": {
+                "by_order_of": null,
+                "payee": null,
+                "payer": null,
+                "payment_method": null,
+                "payment_processor": null,
+                "ppd_id": null,
+                "reason": null,
+                "reference_number": null
+            },
+            "pending": false,
+            "pending_transaction_id": null,
+            "transaction_id": "nVM8jDVWZNcpqE4loEX4iBXqBMoZNxHPvd3rw",
+            "transaction_type": "place",
+            "product_name" : "20 pc. Chicken McNuggets with fries"
+        },
+        {
+            "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
+            "account_owner": null,
+            "amount": 5,
+            "category": [
+                "Shops",
+                "Supermarkets and Groceries"
+            ],
+            "category_id": "19047000",
+            "date": "2017-11-24",
+            "location": {
+                "address": null,
+                "city": null,
+                "lat": null,
+                "lon": null,
+                "state": null,
+                "store_number": "3322",
+                "zip": null
+            },
+            "name": "Walgreens purchase",
+            "payment_meta": {
+                "by_order_of": null,
+                "payee": null,
+                "payer": null,
+                "payment_method": null,
+                "payment_processor": null,
+                "ppd_id": null,
+                "reason": null,
+                "reference_number": null
+            },
+            "pending": false,
+            "pending_transaction_id": null,
+            "transaction_id": "nVM8jDVWZNcpqE4loEX4iBXqBMoZNxHPvd3rw",
+            "transaction_type": "place",
+            "product_name" : "Trix cereal"
+        },
+        {
+            "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
+            "account_owner": null,
+            "amount": 2.50,
+            "category": [
+                "Shops",
+                "Supermarkets and Groceries"
+            ],
+            "category_id": "19047000",
+            "date": "2017-10-20",
+            "location": {
+                "address": null,
+                "city": null,
+                "lat": null,
+                "lon": null,
+                "state": null,
+                "store_number": "3322",
+                "zip": null
+            },
+            "name": "Stop and Shop",
+            "payment_meta": {
+                "by_order_of": null,
+                "payee": null,
+                "payer": null,
+                "payment_method": null,
+                "payment_processor": null,
+                "ppd_id": null,
+                "reason": null,
+                "reference_number": null
+            },
+            "pending": false,
+            "pending_transaction_id": null,
+            "transaction_id": "nVM8jDVWZNcpqE4loEX4iBXqBMoZNxHPvd3rw",
+            "transaction_type": "place",
+            "product_name" : "Beef jerky"
+        },
+        {
+            "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
+            "account_owner": null,
+            "amount": 4.25,
+            "category": [
+                "Shops",
+                "Supermarkets and Groceries"
+            ],
+            "category_id": "19047000",
+            "date": "2017-11-01",
+            "location": {
+                "address": null,
+                "city": null,
+                "lat": null,
+                "lon": null,
+                "state": null,
+                "store_number": "3322",
+                "zip": null
+            },
+            "name": "Market basket",
+            "payment_meta": {
+                "by_order_of": null,
+                "payee": null,
+                "payer": null,
+                "payment_method": null,
+                "payment_processor": null,
+                "ppd_id": null,
+                "reason": null,
+                "reference_number": null
+            },
+            "pending": false,
+            "pending_transaction_id": null,
+            "transaction_id": "nVM8jDVWZNcpqE4loEX4iBXqBMoZNxHPvd3rw",
+            "transaction_type": "place",
+            "product_name" : "Oscar Mayer Weiners"
+        },
+        {
+            "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
+            "account_owner": null,
+            "amount": 13,
+            "category": [
+                "Shops",
+                "Supermarkets and Groceries"
+            ],
+            "category_id": "19047000",
+            "date": "2017-10-10",
+            "location": {
+                "address": null,
+                "city": null,
+                "lat": null,
+                "lon": null,
+                "state": null,
+                "store_number": "3322",
+                "zip": null
+            },
+            "name": "Shaw's purchase",
+            "payment_meta": {
+                "by_order_of": null,
+                "payee": null,
+                "payer": null,
+                "payment_method": null,
+                "payment_processor": null,
+                "ppd_id": null,
+                "reason": null,
+                "reference_number": null
+            },
+            "pending": false,
+            "pending_transaction_id": null,
+            "transaction_id": "nVM8jDVWZNcpqE4loEX4iBXqBMoZNxHPvd3rw",
+            "transaction_type": "place",
+            "product_name" : "Grapes"
+        },
+        {
+            "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
+            "account_owner": null,
+            "amount": 6.50,
+            "category": [
+                "Shops",
+                "Supermarkets and Groceries"
+            ],
+            "category_id": "19047000",
+            "date": "2017-9-24",
+            "location": {
+                "address": null,
+                "city": null,
+                "lat": null,
+                "lon": null,
+                "state": null,
+                "store_number": "3322",
+                "zip": null
+            },
+            "name": "Shaw's",
+            "payment_meta": {
+                "by_order_of": null,
+                "payee": null,
+                "payer": null,
+                "payment_method": null,
+                "payment_processor": null,
+                "ppd_id": null,
+                "reason": null,
+                "reference_number": null
+            },
+            "pending": false,
+            "pending_transaction_id": null,
+            "transaction_id": "nVM8jDVWZNcpqE4loEX4iBXqBMoZNxHPvd3rw",
+            "transaction_type": "place",
+            "product_name" : "Broccoli"
         }
     ],
     "status_code": 200

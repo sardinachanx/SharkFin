@@ -46,7 +46,7 @@ function attrToApis(attributes) {
   var map = {};
   if (~attributes.indexOf('grocery')) {
     map['walmart'] = true;
-    //map['supermarket'] = true;
+    map['supermarket'] = true;
   }
   if (~attributes.indexOf('clothing')) {
     map['macys'] = true;
@@ -159,7 +159,7 @@ const dataPoint = DataPoint.create({
       let stores = acc.value.ArrayOfStore.Store;
       stores = stores.filter((item, pos) => {
         return stores.findIndex(x => x.Storename[0] == item.Storename[0]) == pos;
-      }).slice(0, 3);
+      }).slice(0, 1);
       acc.locals.addressMap = {};
       let storeIds = [];
       for (let store of stores) {
@@ -192,7 +192,7 @@ const dataPoint = DataPoint.create({
         product.address = storeInfo.address;
         product.price = Number(product.Pricing[0]);
       });
-      products.filter(product => product.price < acc.locals.priceMax);
+      products = products.filter(product => product.price < acc.locals.priceMax);
       return products.map(product => { return {
         type: 'localcheaper',
         name: product.Itemname[0],
@@ -229,7 +229,7 @@ let proc = (input) => {
     }
     finalData.sort((a, b) => a.price - b.price);
     return new Promise(done => {
-      done({
+      done(finalData.length === 0 ? undefined : {
         item: input.item,
         price: input.price,
         type: finalData[0].type,

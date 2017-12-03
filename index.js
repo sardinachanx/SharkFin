@@ -2,7 +2,8 @@
 
 var data1 = require('./lib/customTransaction1.json');
 
-var purchase = require(__dirname  + '/purchase.js');
+var purchase = require('./purchase.js');
+var fetchAlts = require('./fetchAlts.js');
 
 var envvar = require('envvar');
 var express = require('express');
@@ -13,18 +14,19 @@ var plaid = require('plaid');
 var transactions;
 
 var APP_PORT = envvar.number('APP_PORT', 8000);
-var PLAID_CLIENT_ID = envvar.string('PLAID_CLIENT_ID',"5616c9f51abbf9e13f581fb2");
-var PLAID_SECRET = envvar.string('PLAID_SECRET',"488760dbd0560fbb10d5845bf03a24");
-var PLAID_PUBLIC_KEY = envvar.string('PLAID_PUBLIC_KEY',"505704614c705498646afea6bffe29");
-var PLAID_ENV = envvar.string('PLAID_ENV', 'production');
+
+var debug = true;
+
+var PLAID_CLIENT_ID = envvar.string('PLAID_CLIENT_ID', debug ? '5a21a2ac4e95b836d37e3672' : '5616c9f51abbf9e13f581fb2' );
+var PLAID_SECRET = envvar.string('PLAID_SECRET', debug ? 'c8dbac9121245f93510d139d270519' : '488760dbd0560fbb10d5845bf03a24');
+var PLAID_PUBLIC_KEY = envvar.string('PLAID_PUBLIC_KEY', debug ? 'b8ef71cf0f8b7bdfe6d8da3761a04a' : '505704614c705498646afea6bffe29');
+var PLAID_ENV = envvar.string('PLAID_ENV', debug ? 'sandbox' : 'production' );
 
 // We store the access_token in memory - in production, store it in a secure
 // persistent data store
 var ACCESS_TOKEN = null;
 var PUBLIC_TOKEN = null;
 var ITEM_ID = null;
-
-var debug = false;
 
 var client = new plaid.Client(
   PLAID_CLIENT_ID,
@@ -118,7 +120,8 @@ app.post('/item', function(request, response, next) {
 
 app.post('/transactions', function(request, response, next) {
 
-  var startDate = moment().subtract(90, 'days').format('YYYY-MM-DD');
+  //start and end dates for transaction
+  var startDate = moment().subtract(160, 'days').format('YYYY-MM-DD');
   var endDate = moment().format('YYYY-MM-DD');
   client.getTransactions(ACCESS_TOKEN, startDate, endDate, {
     count: 250,
@@ -131,15 +134,20 @@ app.post('/transactions', function(request, response, next) {
       });
     }
 
-    if(debug) transactions = transactionsResponse.transactions.concat(data1.transactions);
+    transactions = debug ? transactionsResponse.transactions.concat(data1.transactions) : transactionsResponse.transactions;
 
     transactions = transactions.map(entry => purchase.purchase(entry.product_name==null ? entry.name : entry.product_name, entry.amount, entry.date, entry.category_id));
-    response.json(transactions);
+
+    console.dir(transactions, {depth: null});
+
+    transactions = fetchAlts(transactions).then((output) => {
+
+      response.json(output.filter(n => !!n));
+    
+    });
+    
   });
 });
-
-//POST this endpoint to use custom transaction data
-//app.post('/customTransactions', (_, response) => response.json(data1));
 
 var server = app.listen(APP_PORT, function() {
   console.log('plaid-walkthrough server listening on port ' + APP_PORT);
