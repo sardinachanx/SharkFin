@@ -15,6 +15,7 @@
   "category_map": {
     "19013001" : "vgaming",
     "19047000" : "grocery",
+    "19048000" : "tobacco",
     "13005" : "fdout",
     "19012" : "clothing",
     "13" : "alcohol",
@@ -29,12 +30,14 @@
     "fdout" : 4,
     "clothing" : 5,
     "services" : 6,
-    "travel" : 7
+    "travel" : 7,
+    "tobacco" : 8
   },
   "threshold_map":{
     "premium": 0.2,
     "alcohol": 0.4, 
     "vgaming": 0.3, 
-    "fdout": 0.6 
+    "fdout": 0.6,
+    "tobacco" : 0.7
   }
 }

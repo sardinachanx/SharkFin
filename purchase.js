@@ -134,11 +134,9 @@ if(debug){
     }
     return init;
   }
-  //console.log(exports.binnedPurchases(set()));
   let all = exports.binnedPurchases(set());
   console.log(all);
   console.log(Object.keys(queue_map));
-  //console.log(exports.isRecurrent(all[2],Object.keys(queue_map)[2]))
   console.log(exports.get(all, "price"));
-  console.log(exports.getRecurrent(all,[0,1,2,4]));
+  console.log(exports.getRecurrent(all,[0,1,2,4,8])); //always call w/ these indices if you want to get the recurring stuff
 }
