@@ -8,8 +8,6 @@ const queue_map = keywords.queue_map;
 const threshold_map = keywords.threshold_map;
 const debug = true;
 
-
-
 //first tag indiv data, then tag again for long-term trends
 exports.purchase = function(item, price, date, category){
   let attributes = function(item, price, date, category){
@@ -59,7 +57,7 @@ exports.binnedPurchases = function(allPurchases){
   return init_array;
 }
 
-exports.getAll = function(queues){
+exports.get = function(queues, query){
   //console.log(queues);
   var all = [];
   for(i = 0; i < queues.length; i++){
@@ -77,7 +75,18 @@ exports.getAll = function(queues){
     } 
   }
   all.sort(sort_by('date', true, parseInt));
-  return JSON.stringify(all);
+  let all_no_dupe = all.filter((other, index, self) => self.findIndex(t => t.item === other.item && t.price === other.price && t.date === other.date && t.category === other.category) === index);
+  //console.log(all_no_dupe);
+  if(query === "price"){
+    var price = 0.00;
+    for(let purchase of all_no_dupe){
+      price += parseFloat(purchase.price);
+    }
+    return price;
+  }
+  else if(query === "all"){
+    return JSON.stringify(all_no_dupe);
+  }
 }
 
 exports.getRecurrent = function(queues, indices){
@@ -99,7 +108,7 @@ exports.getRecurrent = function(queues, indices){
     for(let purchase of queue){
       sum += model(currTime, purchase.date);
     }
-    console.log("ratio " + sum/queue.length);
+    //console.log("ratio " + sum/queue.length);
     return sum/queue.length > threshold_map[label];
   }
   var recurring = [];
@@ -116,12 +125,12 @@ if(debug){
   //tag(p);
   //console.log(p.item);
 
-  let test_epoch_dates = [/*1512154560,*//*1511636160,*./*1510858560,*//*1510772160,*/1509562560,1509216960,1508612160,1505501760,1503255360];
+  let test_epoch_dates = [/*1512154560,*//*1511636160,*./*1510858560,*//*1510772160,*//*1509562560,*/1509216960,1509216960,1508612160,1505501760,1503255360];
 
   function set(){
     let init = [];
     for(i = 0; i < 5; i++){
-      init.push(exports.purchase('steam', 4, test_epoch_dates[i], '19013001'));
+      init.push(exports.purchase('steam', 4.00, test_epoch_dates[i], '19013001'));
     }
     return init;
   }
@@ -130,6 +139,6 @@ if(debug){
   console.log(all);
   console.log(Object.keys(queue_map));
   //console.log(exports.isRecurrent(all[2],Object.keys(queue_map)[2]))
-  console.log(exports.getAll(all));
+  console.log(exports.get(all, "price"));
   console.log(exports.getRecurrent(all,[0,1,2,4]));
 }
