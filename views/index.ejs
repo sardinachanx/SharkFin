@@ -1,50 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Plaid Walkthrough Example</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>SharkFin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="theme.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.3.2/autotrack.js" async></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.5.1/vue-router.min.js"></script>
+        <script src="uikit.min.js" ></script>
+        <script src="uikit-icons.min.js" ></script>
+
+        <style>.Overlay{opacity:0}.loading-indicator{-webkit-animation:rot 1.2s infinite cubic-bezier(.23,1.2,.32,1);animation:rot 1.2s infinite cubic-bezier(.23,1.2,.32,1);border-bottom:2px solid #e3e3e3;border-left:2px solid #e3e3e3;border-radius:100%;border-right:2px solid #e3e3e3;border-top:2px solid #7e7e7e;font-size:100%;font:inherit;height:45px;left:calc(50% - (45px / 2));margin:0;padding:0;position:absolute;top:40%;vertical-align:baseline;width:45px;box-sizing:border-box}@-webkit-keyframes rot{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@keyframes rot{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}
+
+
+          div.hide {
+            display:none;
+          }
+        </style>
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.plaid.com/link/2.0.92/link.css">
 </head>
-<body>
-  <div id="banner">
-    <h1>Plaid Example Walkthrough</h1>
-    <p id="intro">
-      This is an example application that walks through integrating Plaid Link using the API to retrieve Auth and Transaction data.
-    </p>
-    <p id="steps">
-      Great - you just created an Item! The server was successfully able to exchange the public_token for an access_token.
-      Below are a few options - you can get account data, retrieve information about the Item itself, or pull transaction data.
-    </p>
+
+<body class="gorgias-loaded">
+  <div id="intro">
+        <div class="uk-offcanvas-content"><div class="uk-section-primary tm-section-texture"><div uk-sticky="media: 960" class="uk-navbar-container tm-navbar-container uk-navbar-transparent uk-sticky uk-sticky-fixed" style="position: fixed; top: 0px; width: 884px;"><div class="uk-container uk-container-expand"><nav class="uk-navbar"><div class="uk-navbar-left"><a href="/" class="uk-navbar-item uk-logo router-link-exact-active uk-active">SharkFin
+
+        </a></div> <div class="uk-navbar-right"><ul class="uk-navbar-nav uk-visible@m"><li class=""><a href="">About</a></li> <li><a href="">Documentation</a></li> </ul> <div class="uk-navbar-item uk-visible@m"><a href="" class="uk-button uk-button-default tm-button-default uk-icon">Login</a></div></nav></div></div><div class="uk-sticky-placeholder" style="height: 80px; margin: 0px;"></div> <div uk-height-viewport="offset-top: true; offset-bottom: true" class="uk-section uk-section-small uk-flex uk-flex-middle uk-text-center" style="box-sizing: border-box; min-height: calc(100vh - 183px); height: calc(100vh - 183px);"><div class="uk-width-1-1"><div class="uk-container"><p><img src="ring.svg" style="height:100px"></p> <p class="uk-margin-medium uk-text-lead">
+                    Generic Text<br class="uk-visible@s">
+                    For the Hack
+                </p> <div uk-grid="" class="uk-child-width-auto uk-grid-medium uk-flex-inline uk-flex-center uk-grid"><div class="uk-first-column">
+                  <a href="#"  onclick="setTimeout(function(){window.location = 'https://sharon-lin.github.io/yhacks2017/main.html';},8000);" id="link-btn" class="uk-button uk-button-primary tm-button-primary uk-button-large tm-button-large uk-visible@s" uk-toggle>Get Started</a> </div> </div></div></div></div>
+
+<br><br><br><br><br>
+
+</div>
+
+
+<!--  STEPS     -->
+
+
+    <div id="steps" class="hide">
+      <div uk-sticky="media: 960" class="uk-navbar-container tm-navbar-container uk-sticky uk-sticky-fixed" style="position: fixed; top: 0px; width: 884px;"><div class="uk-container uk-container-expand"><nav class="uk-navbar"><div class="uk-navbar-left"><a href="index.html" class="uk-navbar-item uk-logo">
+      SharkFin
+      </a></div> <div class="uk-navbar-right"><ul class="uk-navbar-nav uk-visible@m"><li><a href="../pro">About</a></li> <li class="uk-active"><a href="../docs/">Documentation</a></li></ul> <div class="uk-navbar-item uk-visible@m"><a href="../download" class="uk-button uk-button-default tm-button-default uk-icon">Logout</a></div> <a uk-navbar-toggle-icon="" href="#offcanvas" uk-toggle="" class="uk-navbar-toggle uk-hidden@m uk-navbar-toggle-icon uk-icon"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" ratio="1"><rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect></svg></a></div></nav></div></div>
+
   </div>
 
-  <div id="container">
-    <p>
-      Click the button below to open a list of Institutions - after you select one,
-      you'll be guided through an authentication process. The public_token will be passed
-      back to the example server, which will then exchange it for an access token and log it
-      to your console.
-    </p>
 
-    <button id="link-btn">Link Account</button>
-  </div>
+    <!--STEPS-->
 
-  <div id="app">
-    <div class="box">
-      <button id="get-accounts-btn">Get Accounts</button>
-      <div id="get-accounts-data"></div>
-    </div>
-
-    <div class="box">
-      <button id="get-item-btn">Get Item</button>
-      <div id="get-item-data"></div>
-    </div>
-
-    <div class="box">
-      <button id="get-transactions-btn">Get Transactions</button>
-      <div id="get-transactions-data"></div>
-    </div>
-  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
   <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
@@ -57,12 +64,13 @@
       product: ['transactions'],
       key: '<%= PLAID_PUBLIC_KEY %>',
       onSuccess: function(public_token) {
+        window.location = 'file:///Users/sharonlin/Downloads/BeHappy/templates/main.html';
         $.post('/get_access_token', {
           public_token: public_token
         }, function() {
           $('#container').fadeOut('fast', function() {
             $('#intro').hide();
-            $('#app, #steps').fadeIn('slow');
+            $('#app, #steps').show();
           });
         });
       },

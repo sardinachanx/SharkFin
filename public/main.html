@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+    <head>
+        <title>YHack</title>
+        <meta charset="utf-8">
+        <!--<link rel="shortcut icon" href="images/favicon.png">
+        <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="theme.css?583">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.3.2/autotrack.js" async></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.5.1/vue-router.min.js"></script>
+        <script src="uikit.min.js?583" defer></script>
+        <script src="uikit-icons.min.js?583" defer></script>
+
+        <style>
+        div.hide { display:none; }
+        </style>
+    </head>
+
+<body>
+
+<div uk-sticky="media: 960" class="uk-navbar-container tm-navbar-container uk-sticky uk-sticky-fixed" style="position: fixed; top: 0px; width: 884px;"><div class="uk-container uk-container-expand"><nav class="uk-navbar"><div class="uk-navbar-left"><a href="index.html" class="uk-navbar-item uk-logo">
+SharkFin
+</a></div> <div class="uk-navbar-right"><ul class="uk-navbar-nav uk-visible@m"><li><a href="../pro">About</a></li> <li class="uk-active"><a href="#">Welcome, user_good!</a></li></ul> <div class="uk-navbar-item uk-visible@m"><a href="../download" class="uk-button uk-button-default tm-button-default uk-icon">Logout</a></div> <a uk-navbar-toggle-icon="" href="#offcanvas" uk-toggle="" class="uk-navbar-toggle uk-hidden@m uk-navbar-toggle-icon uk-icon"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" ratio="1"><rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect></svg></a></div></nav></div></div>
+
+
+<div  class="tm-sidebar-left uk-visible@m" style="width:250px !important"><h3>Last 6 Months</h3> <ul id="demo" uk-accordion>
+   <!--<li class="uk-open">
+        <h3 class="uk-accordion-title" onclick="showText('text0',['text1','text2'])" href="javascript:void(0);">Item 1</h3>
+        <div class="uk-accordion-content">
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </li>-->
+</ul>
+</div>
+
+
+<div class="tm-main uk-section uk-section-default" style="padding-left:400px !important;margin:-150px;padding-top:200px !important;"><div class="uk-container uk-container-small uk-position-relative"><div><!----> <div><h1 id="accordion" class="uk-h1 tm-heading-fragment"><a href="#accordion">Analysis</a></h1><p class="uk-text-lead">Your current purchases</p>
+<div id="demo1">
+  <!--<div id="text0" class="hide">
+    <div class="uk-animation-toggle">
+    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m  uk-animation-scale-up" style="width:1000px; margin:10px">
+      <h3 class="uk-card-title">Default1</h3>
+      <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    </div>
+  </div>-->
+</div>
+
+  <h1 id="accordion" class="uk-h1 tm-heading-fragment"><a href="#accordion">Further Analysis</a></h1><p class="uk-text-lead">Total potential savings</p>
+
+<div id="demo2">
+  <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</div>
+
+<h1 id="accordion1" class="uk-h1 tm-heading-fragment"><a href="#accordion1">Sentiment Analysis</a></h1><p class="uk-text-lead">Analysis of Social Media Activity</p>
+<div id="demo3">
+<div id="chartContainer1" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</div>
+
+<div uk-grid="" class="uk-child-width-auto uk-grid-medium uk-flex-inline uk-flex-center uk-grid"><div class="uk-first-column">
+  <a href="#"  onclick="showCharts()" class="uk-button uk-button-primary tm-button-primary uk-button-large tm-button-large uk-visible@s" uk-toggle><button onclick="myFacebookLogin()">Login with Facebook</button></a> </div> </div>
+  </div>
+
+  <br><br><br><br><br><br><br><br>
+</div>
+
+</div>
+</div>
+
+
+
+<div id="offcanvas" uk-offcanvas="mode: push; overlay: true" class="uk-offcanvas"><div class="uk-offcanvas-bar"><div class="uk-panel"><ul class="uk-nav uk-nav-default tm-nav"><li class="uk-nav-header">General</li> <li><a href="../index">Home</a></li> <li><a href="../pro">Pro</a></li> <li><a href="../changelog">Changelog</a></li> <li><a href="../download">Download</a></li></ul> <ul class="uk-nav uk-nav-default tm-nav uk-margin-top"><li class="uk-nav-header">Getting started</li> <li exact=""><a href="./introduction">Introduction</a></li><li exact=""><a href="./installation">Installation</a></li><li exact=""><a href="./less">Less</a></li><li exact=""><a href="./sass">Sass</a></li><li exact=""><a href="./javascript">JavaScript</a></li><li exact=""><a href="./webpack">Webpack</a></li><li exact=""><a href="./custom-icons">Custom icons</a></li><li exact=""><a href="./avoiding-conflicts">Avoiding conflicts</a></li><li exact=""><a href="./rtl">RTL support</a></li><li exact=""><a href="./migration">Migration</a></li></ul><ul class="uk-nav uk-nav-default tm-nav uk-margin-top"><li class="uk-nav-header">Components</li> <li exact=""><a href="./accordion">Accordion</a></li><li exact=""><a href="./alert">Alert</a></li><li exact=""><a href="./align">Align</a></li><li exact=""><a href="./animation">Animation</a></li><li exact=""><a href="./article">Article</a></li><li exact=""><a href="./background">Background</a></li><li exact=""><a href="./badge">Badge</a></li><li exact=""><a href="./base">Base</a></li><li exact=""><a href="./breadcrumb">Breadcrumb</a></li><li exact=""><a href="./button">Button</a></li><li exact=""><a href="./card">Card</a></li><li exact=""><a href="./close">Close</a></li><li exact=""><a href="./column">Column</a></li><li exact=""><a href="./comment">Comment</a></li><li exact=""><a href="./container">Container</a></li><li exact=""><a href="./countdown">Countdown</a></li><li exact=""><a href="./cover">Cover</a></li><li exact=""><a href="./description-list">Description List</a></li><li exact=""><a href="./divider">Divider</a></li><li exact=""><a href="./dotnav">Dotnav</a></li><li exact=""><a href="./drop">Drop</a></li><li exact=""><a href="./dropdown">Dropdown</a></li><li exact=""><a href="./flex">Flex</a></li><li exact=""><a href="./form">Form</a></li><li exact=""><a href="./grid">Grid</a></li><li exact=""><a href="./grid-parallax">Grid Parallax</a></li><li exact=""><a href="./heading">Heading</a></li><li exact=""><a href="./icon">Icon</a></li><li exact=""><a href="./iconnav">Iconnav</a></li><li exact=""><a href="./inverse">Inverse</a></li><li exact=""><a href="./label">Label</a></li><li exact=""><a href="./lightbox">Lightbox</a></li><li exact=""><a href="./link">Link</a></li><li exact=""><a href="./list">List</a></li><li exact=""><a href="./margin">Margin</a></li><li exact=""><a href="./marker">Marker</a></li><li exact=""><a href="./modal">Modal</a></li><li exact=""><a href="./nav">Nav</a></li><li exact=""><a href="./navbar">Navbar</a></li><li exact=""><a href="./notification">Notification</a></li><li exact=""><a href="./offcanvas">Off-canvas</a></li><li exact=""><a href="./overlay">Overlay</a></li><li exact=""><a href="./padding">Padding</a></li><li exact=""><a href="./pagination">Pagination</a></li><li exact=""><a href="./parallax">Parallax</a></li><li exact=""><a href="./placeholder">Placeholder</a></li><li exact=""><a href="./position">Position</a></li><li exact=""><a href="./print">Print</a></li><li exact=""><a href="./progress">Progress</a></li><li exact=""><a href="./scroll">Scroll</a></li><li exact=""><a href="./scrollspy">Scrollspy</a></li><li exact=""><a href="./search">Search</a></li><li exact=""><a href="./section">Section</a></li><li exact=""><a href="./slidenav">Slidenav</a></li><li exact=""><a href="./slideshow">Slideshow</a></li><li exact=""><a href="./sortable">Sortable</a></li><li exact=""><a href="./spinner">Spinner</a></li><li exact=""><a href="./sticky">Sticky</a></li><li exact=""><a href="./subnav">Subnav</a></li><li exact=""><a href="./switcher">Switcher</a></li><li exact=""><a href="./tab">Tab</a></li><li exact=""><a href="./table">Table</a></li><li exact=""><a href="./text">Text</a></li><li exact=""><a href="./thumbnav">Thumbnav</a></li><li exact=""><a href="./tile">Tile</a></li><li exact=""><a href="./toggle">Toggle</a></li><li exact=""><a href="./tooltip">Tooltip</a></li><li exact=""><a href="./totop">Totop</a></li><li exact=""><a href="./transition">Transition</a></li><li exact=""><a href="./upload">Upload</a></li><li exact=""><a href="./utility">Utility</a></li><li exact=""><a href="./visibility">Visibility</a></li><li exact=""><a href="./width">Width</a></li></ul></div></div></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: ""
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			{y: 79.45, label: "Ice Cream"},
+			{y: 7.31, label: "Pizza"},
+			{y: 7.06, label: "Doritos"},
+			{y: 4.91, label: "Candy"},
+			{y: 1.26, label: "Others"}
+		]
+	}]
+});
+chart.render();
+
+}
+
+
+function showCharts() {
+
+ var chart = new CanvasJS.Chart("chartContainer1", {
+ 	animationEnabled: true,
+ 	title: {
+ 		text: ""
+ 	},
+ 	data: [{
+ 		type: "pie",
+ 		startAngle: 240,
+ 		yValueFormatString: "##0.00\"%\"",
+ 		indexLabel: "{label} {y}",
+ 		dataPoints: [
+ 			{y: 60.45, label: "Happiness"},
+ 			{y: 10.31, label: "Frustration"},
+ 			{y: 17.06, label: "Sadness"},
+ 			{y: 3.91, label: "Excitement"},
+ 			{y: 8.27, label: "Other"}
+ 		]
+ 	}]
+ });
+ chart.render();
+
+ }
+
+function showText(show,hide)
+{
+    for (var k=0;k<show.length;k++){
+      for (var h=0;h<6;h++){
+        try{
+          console.log("SHOW " + show+String(k))
+          document.getElementById(show+String(k)).className = "show";
+        }
+        catch (e) { // non-standard
+           console.log(e);
+           break;
+        }
+      }
+    }
+
+    for (var k=0;k<hide.length;k++){
+      for (var h=0;h<6;h++){
+        try{
+          console.log("HIDE "+hide[k]+h)
+          document.getElementById(hide[k]+h).className = "hide";
+        }
+        catch (e) { // non-standard
+           console.log(e);
+           break;
+        }
+      }
+    }
+}
+
+
+var obj, dbParam, xmlhttp, myObj, x, txt = "", txt1="", txt2="";
+
+var jsonObj = JSON.parse('{"name":"Samuel", "purchases": [{"item":"McDonalds","price":12,"type":"habit"},{"item":"Starbucks","price":4.33,"type":"habit"},{"item":"KFC","price":500,"type":"habit"},{"item":"McDonalds","price":12,"type":"habit"},{"item":"Starbucks","price":4.33,"type":"habit"},{"item":"KFC","price":500,"type":"habit"},{"item":"McDonalds","price":12,"type":"habit"},{"item":"Starbucks","price":4.33,"type":"habit"},{"item":"KFC","price":500,"type":"habit"},{"item":"McDonalds","price":12,"type":"habit"},{"item":"Starbucks","price":4.33,"type":"habit"},{"item":"KFC","price":500,"type":"habit"},{"item":"McDonalds","price":12,"type":"habit"},{"item":"Starbucks","price":4.33,"type":"habit"},{"item":"KFC","price":500,"type":"habit"},{"item":"McDonalds","price":12,"type":"habit"},{"item":"Starbucks","price":4.33,"type":"habit"},{"item":"20 pc. Chicken McNuggets with fries","price":12,"type":"habit"},{"item":"Cup of coffee","price":4.33,"type":"habit"},{"item":"8 Piece chicken only","price":500,"type":"habit"},{"item":"20 pc. Chicken McNuggets with fries","price":12,"type":"habit"},{"item":"20 pc. Chicken McNuggets with fries","price":12,"type":"habit"},{"item":"20 pc. Chicken McNuggets with fries","price":12,"type":"habit"},{"item":"20 pc. Chicken McNuggets with fries","price":12,"type":"habit"},{"item":"20 pc. Chicken McNuggets with fries","price":12,"type":"habit"},{"item":"20 pc. Chicken McNuggets with fries","price":12,"type":"habit"},{"item":"Trix cereal","price":5,"type":"localcheaper","substitutes":[{"type":"localcheaper","name":"General Mills Trix Cereal  Swirls  - 10.7 oz (303 g)","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/AA236AE.jpg","price":1.99,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"cheaper","link":"http://c.affil.walmart.com/t/api02?l=https%3A%2F%2Fwww.walmart.com%2Fip%2FCorn-Chex-Gluten-Free-Cereal-12-oz-Box%2F37402339%3Faffp1%3Dy8YibQEtxz3LUSzsUD3jdOamzsuOWSG338-KvOCXjXo%26affilsrc%3Dapi%26veh%3Daff%26wmlspartner%3Dreadonlyapi","name":"Corn Chex Gluten Free Cereal 12 oz Box","company":"Walmart","price":3.3,"image":"https://i5.walmartimages.com/asr/23b068e0-92ba-43ed-9ecb-5c3123885973_1.b130eb79a214cef42ba7a1d887c6666d.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF"},{"type":"cheaper","link":"http://c.affil.walmart.com/t/api02?l=https%3A%2F%2Fwww.walmart.com%2Fip%2FTrix-Cereal-Swirls-10-7-oz-Box%2F21125856%3Faffp1%3Dy8YibQEtxz3LUSzsUD3jdOamzsuOWSG338-KvOCXjXo%26affilsrc%3Dapi%26veh%3Daff%26wmlspartner%3Dreadonlyapi","name":"Trix Cereal Swirls 10.7 oz Box","company":"Walmart","price":3.83,"image":"https://i5.walmartimages.com/asr/6fca3adf-8f07-4278-8a87-ebb3931bdd39_1.2b3d496c85a5485b30a26ea74e86eea4.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF"},{"type":"cheaper","link":"http://c.affil.walmart.com/t/api02?l=https%3A%2F%2Fwww.walmart.com%2Fip%2FTrix-Cereal-Swirls-14-8-oz-Box%2F10311278%3Faffp1%3Dy8YibQEtxz3LUSzsUD3jdOamzsuOWSG338-KvOCXjXo%26affilsrc%3Dapi%26veh%3Daff%26wmlspartner%3Dreadonlyapi","name":"Trix Cereal Swirls 14.8 oz Box","company":"Walmart","price":3.83,"image":"https://i5.walmartimages.com/asr/a9dd4f84-a1e1-4c1e-9090-ad032206e4e4_1.ed6f14dd088bb7a911136e0df8e86f57.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF"},{"type":"cheaper","link":"http://c.affil.walmart.com/t/api02?l=https%3A%2F%2Fwww.walmart.com%2Fip%2FQuaker-Oatmeal-Squares-Cereal-Cinnamon-21-oz-Box%2F34536026%3Faffp1%3Dy8YibQEtxz3LUSzsUD3jdOamzsuOWSG338-KvOCXjXo%26affilsrc%3Dapi%26veh%3Daff%26wmlspartner%3Dreadonlyapi","name":"Quaker Oatmeal Squares Cereal, Cinnamon, 21 oz Box","company":"Walmart","price":3.98,"image":"https://i5.walmartimages.com/asr/64675bc3-4616-43b7-bf95-d2db5520c5d9_1.345486e69aa2aa30560f66951c0e75d3.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF"},{"type":"cheaper","link":"http://c.affil.walmart.com/t/api02?l=https%3A%2F%2Fwww.walmart.com%2Fip%2FKashi-GOLEAN-Cereal-21-oz-Box%2F22356620%3Faffp1%3Dy8YibQEtxz3LUSzsUD3jdOamzsuOWSG338-KvOCXjXo%26affilsrc%3Dapi%26veh%3Daff%26wmlspartner%3Dreadonlyapi","name":"Kashi® GOLEAN® Cereal 21 oz. Box","company":"Walmart","price":4.28,"image":"https://i5.walmartimages.com/asr/951c833a-d38b-4fde-bf75-dbafe9abb19a_1.9af1f5a856724568fbe5cedab0a6beae.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF"},{"type":"cheaper","link":"http://c.affil.walmart.com/t/api02?l=https%3A%2F%2Fwww.walmart.com%2Fip%2FTrix-Cereal-18-4-oz-Box%2F17203445%3Faffp1%3Dy8YibQEtxz3LUSzsUD3jdOamzsuOWSG338-KvOCXjXo%26affilsrc%3Dapi%26veh%3Daff%26wmlspartner%3Dreadonlyapi","name":"Trix Cereal 18.4 oz. Box","company":"Walmart","price":4.55,"image":"https://i5.walmartimages.com/asr/c75da52f-d699-4624-9135-c6fcc86d3382_1.e4151207661205f2cf4ed80b5b20b83d.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF"},{"type":"localcheaper","name":"General Mills Trix Cereal - 10.7 Oz","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/111011133_100x100.jpg","price":4.69,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"cheaper","link":"http://c.affil.walmart.com/t/api02?l=https%3A%2F%2Fwww.walmart.com%2Fip%2FTrix-Cereal-26-oz-ZIP-PAK%2F55316737%3Faffp1%3Dy8YibQEtxz3LUSzsUD3jdOamzsuOWSG338-KvOCXjXo%26affilsrc%3Dapi%26veh%3Daff%26wmlspartner%3Dreadonlyapi","name":"Trix™ Cereal 26 oz. ZIP-PAK®","company":"Walmart","price":4.87,"image":"https://i5.walmartimages.com/asr/d615077a-05f3-4c76-ba42-d5c16516622d_1.425f5561c26ec050253c4d3ee0c7322c.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF"}]},{"item":"Beef jerky","price":2.5,"type":"localcheaper","substitutes":[{"type":"localcheaper","name":"Jack Links Smoked Teriyaki Beef Jerky  - 0.32 oz (9 g)","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/9395977.jpg","price":0.99,"address":"251 W 86th St & Broadway, New York, NY"}]},{"item":"Oscar Mayer Weiners","price":4.25,"type":"cheaper","substitutes":[{"type":"cheaper","link":"http://c.affil.walmart.com/t/api02?l=https%3A%2F%2Fwww.walmart.com%2Fip%2FOscar-Mayer-Real-Bacon-Bits-3-oz-Pouch%2F10292741%3Faffp1%3Dy8YibQEtxz3LUSzsUD3jdOamzsuOWSG338-KvOCXjXo%26affilsrc%3Dapi%26veh%3Daff%26wmlspartner%3Dreadonlyapi","name":"Oscar Mayer Real Bacon Bits 3 oz. Pouch","company":"Walmart","price":3.28,"image":"https://i5.walmartimages.com/asr/ed80c348-3697-4c05-b286-1ea885a68a49_1.9b75cdf7e1715ad743553380205024f2.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF"},{"type":"cheaper","link":"http://c.affil.walmart.com/t/api02?l=https%3A%2F%2Fwww.walmart.com%2Fip%2FOscar-Mayer-Selects-Real-Uncured-Bacon-Bits-2-8-Oz%2F21942712%3Faffp1%3Dy8YibQEtxz3LUSzsUD3jdOamzsuOWSG338-KvOCXjXo%26affilsrc%3Dapi%26veh%3Daff%26wmlspartner%3Dreadonlyapi","name":"Oscar Mayer Selects Real Uncured Bacon Bits, 2.8 Oz","company":"Walmart","price":3.28,"image":"https://i5.walmartimages.com/asr/d5f2746e-08b3-4005-97ba-18eaeea41503_1.702795c06beb77b7dba5f11db5611a74.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF"},{"type":"cheaper","link":"http://c.affil.walmart.com/t/api02?l=https%3A%2F%2Fwww.walmart.com%2Fip%2FOscar-Mayer-Real-Bacon-Recipe-Pieces-Hickory-Smoke-Flavor-2-8-OZ%2F10850035%3Faffp1%3Dy8YibQEtxz3LUSzsUD3jdOamzsuOWSG338-KvOCXjXo%26affilsrc%3Dapi%26veh%3Daff%26wmlspartner%3Dreadonlyapi","name":"Oscar Mayer Real Bacon Recipe Pieces Hickory Smoke Flavor, 2.8 OZ","company":"Walmart","price":3.28,"image":"https://i5.walmartimages.com/asr/eedcf93d-e57c-4e98-a623-41d2250b69e8_1.f77839a16782d08c8689a7e105eac9cb.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF"},{"type":"cheaper","link":"http://c.affil.walmart.com/t/api02?l=https%3A%2F%2Fwww.walmart.com%2Fip%2FOscar-Mayer-Turkey-Bacon-Bits-4-Oz-Bag%2F22259112%3Faffp1%3Dy8YibQEtxz3LUSzsUD3jdOamzsuOWSG338-KvOCXjXo%26affilsrc%3Dapi%26veh%3Daff%26wmlspartner%3Dreadonlyapi","name":"Oscar Mayer Turkey Bacon Bits, 4 Oz Bag","company":"Walmart","price":3.54,"image":"https://i5.walmartimages.com/asr/f17e67e6-2862-4401-9de7-c997c442d673_1.4625a5d96c790d0a20728cb40b37bb55.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF"},{"type":"cheaper","link":"http://c.affil.walmart.com/t/api02?l=https%3A%2F%2Fwww.walmart.com%2Fip%2FOscar-Mayer-Real-Bacon-Bits-4-5-oz-Pouch%2F14869675%3Faffp1%3Dy8YibQEtxz3LUSzsUD3jdOamzsuOWSG338-KvOCXjXo%26affilsrc%3Dapi%26veh%3Daff%26wmlspartner%3Dreadonlyapi","name":"Oscar Mayer Real Bacon Bits 4.5 oz. Pouch","company":"Walmart","price":3.83,"image":"https://i5.walmartimages.com/asr/a98eaf82-287c-4674-9511-790893601bff_1.c4105004ee071dadd4aaf2ddf554a420.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF"}]},{"item":"Grapes","price":13,"type":"localcheaper","substitutes":[{"type":"localcheaper","name":"Grapes Green Seedless","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/184100014_100x100.jpg","price":2.69,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Grapes Red Seedless","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/184100012_100x100.jpg","price":2.69,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Grapes Black Seedless","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/184100013_100x100.jpg","price":2.99,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"GRAPES GOLD N SWEET CLAM ","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/no_image_sm.jpg","price":2.99,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Red Seedless Grapes  - Bunch Weight Averages about 2 Pounds","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/785DBC2.jpg","price":3.99,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"RED GLOBE GRAPES ","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/no_image_sm.jpg","price":3.99,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Black Grapes  - 19LB","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/4EAD250.jpg","price":3.99,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"GRAPES TRI-COLOR CLAMSHELL ","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/no_image_sm.jpg","price":3.99,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Green Seedless Grapes  - Bunches Weight Average about 2 pounds","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/6DBB817.jpg","price":3.99,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"GRAPES 5 LB BOX ","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/no_image_sm.jpg","price":5.99,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"La Tourangelle Grapeseed Oil - 16.9 Fl. Oz.","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/115100022_100x100.jpg","price":10.29,"address":"251 W 86th St & Broadway, New York, NY"}]},{"item":"Broccoli","price":6.5,"type":"localcheaper","substitutes":[{"type":"localcheaper","name":"M P Keelin Regular Sodium Level Creamy Cream of Broccoli Dry Soup Mix  - 1 Oz. Envelope","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/no_image_sm.jpg","price":0.89,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"M P Keelin Homemade Cheddar Broccoli Dry Soup Mix  - 1.7 Oz. Peg Bag","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/no_image_sm.jpg","price":0.99,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Campbells Chunky Ready To Serve Chicken Broccoli Cheese Soup - 18.8 Oz","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/125300081_100x100.jpg","price":1.5,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Green Giant Broccoli and Cheese Sauce - 10 Oz","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/147050002_100x100.jpg","price":1.67,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Manns Sunny Shores Broccoli Carrots Cauliflower Color And Radishes Fresh Mixed Vegetable  - 12 oz (340 g)","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/no_image_sm.jpg","price":1.69,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Campbells Cream Of Broccoli  - 10.75 oz (305 g)","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/D00D660.jpg","price":1.69,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"cheaper","link":"http://c.affil.walmart.com/t/api02?l=https%3A%2F%2Fwww.walmart.com%2Fip%2FPlum-Organics-Stage-2-Broccoli-Apple-Organic-Baby-Food-4-oz-Pouch%2F34118459%3Faffp1%3Dy8YibQEtxz3LUSzsUD3jdOamzsuOWSG338-KvOCXjXo%26affilsrc%3Dapi%26veh%3Daff%26wmlspartner%3Dreadonlyapi","name":"Plum  Organics Stage 2 Broccoli & Apple Organic Baby Food 4 oz. Pouch","company":"Walmart","price":1.85,"image":"https://i5.walmartimages.com/asr/0fa9b89d-e4c8-4f4c-82c6-e1f8dbfc3a77_1.598bee6517338ccaf30966426785583d.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF"},{"type":"localcheaper","name":"Campbells Cream Of Broccoli Condensed Soup - 10.75 Oz","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/125010033_100x100.jpg","price":1.99,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Cascadian Farm Broccoli Cuts - 16 Oz","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/147010668_100x100.jpg","price":2.79,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Campbells Chunky Chicken Broccoli Cheese w/Potato  - 18.8 Oz Pull-Top Can","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/5E82126.jpg","price":2.79,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Tanimura And Antle Broccoflower-Broccoli And Cauliflower Fresh Mixed Vegetable  - 16 Oz. Plastic Wrapped","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/8D92B25.jpg","price":2.99,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Tanimura And Antle Broccoflower-Broccoli And Cauliflower Fresh Mixed Vegetable  - 16 Oz. Plastic Wrapped","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/86E14DE.jpg","price":2.99,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"V8 Garden Broccoli RTS Soup  - 18.3 Oz Carton","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/89934C8.gif","price":3.59,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Signature Broccoli and Cheesy Cheddar Soup - 15 Oz","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/noimageavailable100x100.gif","price":3.89,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"HARRYs SOUP  Cheddar Broccoli ","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/no_image_sm.jpg","price":3.99,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Bear Creek 170 Calories No Msg Cheddar Broccoli Dry Soup Mix  - 11.2 Oz Stand Up Bag","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/299D411.jpg","price":3.99,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Tuna Helper Creamy Broccoli  Classic  - 6.4 oz (181 g)","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/D6A9AD4.jpg","price":4,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Campbells V8 Garden Broccoli Soup - 18.3 Oz","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/960016901_100x100.jpg","price":4.29,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Signature Broccoli and Cheesy Cheddar Soup - 24 Oz","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/noimageavailable100x100.gif","price":4.39,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Helper Chicken with Cheesy Rice And Broccoli  - 24.2 oz (1 lb 8.2 oz) 686 g","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/2/C5F4023.jpg","price":4.99,"address":"251 W 86th St & Broadway, New York, NY"},{"type":"localcheaper","name":"Bear Creek Cheddar Broccoli Soup Mix - 11.2 Oz","company":"Gristedes","image":"http://smapistorage.blob.core.windows.net/thumbimages/125050261_100x100.jpg","price":5.49,"address":"251 W 86th St & Broadway, New York, NY"}]}] }  ')
+
+var myObj = jsonObj["purchases"]
+
+
+for (var i = 0;i<myObj.length;i++) {
+  quicktext = '"text' + i +'",['
+  for (var j = i-1; j>=0; j--){
+    quicktext += '"text' + j + '",'
+  }
+
+  for (var j = i+1; j<myObj.length; j++){
+    quicktext += '"text' + j + '",';
+  }
+
+  if (quicktext.substr(quicktext.length-1) == ','){
+    quicktext = quicktext.substr(0,quicktext.length-1);
+  }
+
+  quicktext += ']'
+  txt += "<li><h3 class='uk-accordion-title' onclick='showText(" + quicktext + ")' href='javascript:void(0);'>"+ myObj[i].item +"</h3>";
+  txt += "<div class='uk-accordion-content'><p>"+"Original Price: "+myObj[i].price+"</p></div></li>";
+
+  if (myObj[i]["substitutes"]){
+    for (var k=0;k<myObj[i]["substitutes"].length;k++){
+      if (myObj[i].type == 'habit'){
+        badgecolor = 'red';
+        description = '<dl class="uk-description-list"><dt>WARNING: This purchase is harmful to your wellbeing.</dt><dd>Consider alternative purchases in the future.</dd></dl>';
+        images = '';
+      }
+      else if (myObj[i].type == 'localcheaper'){
+        badgecolor = 'green'
+        description = '<dl class="uk-description-list"><a href="'+myObj[i]["substitutes"][k].link+'" style="text-decoration: none;color:black"><dt>'+myObj[i]["substitutes"][k].company+'</dt></a><dd>'+'Potential Price: '+myObj[i]["substitutes"][k].price+'</dd><dd>'+'Address: '+myObj[i]["substitutes"][k].address+'</dd></dl>'
+        images = '<div class="uk-flex-last@s uk-card-media-right uk-cover-container"><img src="'+myObj[i]["substitutes"][k].image+'" alt="" uk-cover><canvas width="600" height="400"></canvas></div>'
+      }
+      else if (myObj[i].type == 'cheaper'){
+        badgecolor = ''
+        description = '<dl class="uk-description-list"><a href="'+myObj[i]["substitutes"][k].link+'" style="text-decoration: none;color:black"><dt>'+myObj[i]["substitutes"][k].company+'</dt></a><dd>'+'Potential Price: '+myObj[i]["substitutes"][k].price+'</dd><dd><a href="'+myObj[i]["substitutes"][k].price+'">Link to Purchase</a></dd></dl>'
+        images = '<div class="uk-flex-last@s uk-card-media-right uk-cover-container"><img src="'+myObj[i]["substitutes"][k].image+'" alt="" uk-cover><canvas width="600" height="400"></canvas></div>'
+      }
+      txt1 += '<div id="text' + i + k + '" class="hide"><div class="uk-animation-toggle"><div class="uk-card uk-card-default uk-card-body uk-width-1-2@m  uk-animation-scale-up" style="width:500px; margin:10px"><h3 class="uk-card-title">'+myObj[i].item+'</h3><p><span class="uk-badge" style="background-color:'+badgecolor+'">'+myObj[i].type + '</span>'+description+'</p>'+images+'</div></div></div>'
+
+    }
+  }
+  else{
+    if (myObj[i].type == 'habit'){
+      badgecolor = 'red';
+      description = '<dl class="uk-description-list"><dt>WARNING: This purchase is harmful to your wellbeing.</dt><dd>Consider alternative purchases in the future.</dd></dl>';
+      images = '';
+    }
+    txt1 += '<div id="text' + i +'0" class="hide"><div class="uk-animation-toggle"><div class="uk-card uk-card-default uk-card-body uk-width-1-2@m  uk-animation-scale-up" style="width:500px; margin:10px"><h3 class="uk-card-title">'+myObj[i].item+'</h3><p><span class="uk-badge" style="background-color:'+badgecolor+'">'+myObj[i].type + '</span>'+description+'</p>'+images+'</div></div></div>'
+
+  }
+
+}
+
+document.getElementById("demo").innerHTML = txt;
+document.getElementById("demo1").innerHTML = txt1;
+
+</script>
+
+
+
+</body>
+
+</html>

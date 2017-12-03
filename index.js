@@ -118,7 +118,7 @@ app.post('/item', function(request, response, next) {
   });
 });
 
-app.post('/transactions', function(request, response, next) {
+app.get('/transactions', function(request, response, next) {
 
   //start and end dates for transaction
   var startDate = moment().subtract(160, 'days').format('YYYY-MM-DD');
