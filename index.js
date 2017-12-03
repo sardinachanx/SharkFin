@@ -1,6 +1,6 @@
 'use strict';
 
-var data1 = require('./lib/plaidSandbox1.json');
+var data1 = require('./lib/plaidSandbox2.json');
 
 var purchase = require('./purchase.js');
 var fetchAlts = require('./fetchAlts.js');
