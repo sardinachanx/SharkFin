@@ -30,5 +30,11 @@
     "clothing" : 5,
     "services" : 6,
     "travel" : 7
+  },
+  "threshold_map":{
+    "premium": 0.2,
+    "alcohol": 0.4, 
+    "vgaming": 0.3, 
+    "fdout": 0.6 
   }
 }

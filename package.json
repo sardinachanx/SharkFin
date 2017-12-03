@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "data-point": "1.5.x",
     "body-parser": "1.15.x",
+    "data-point": "^1.5.0",
     "ejs": "2.4.x",
     "envvar": "1.1.x",
     "express": "4.13.x",
     "moment": "2.17.x",
-    "plaid": "2.0.x"
+    "plaid": "2.0.x",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {},
   "scripts": {
