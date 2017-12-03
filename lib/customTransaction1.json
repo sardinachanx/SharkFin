@@ -102,7 +102,8 @@
             "pending": false,
             "pending_transaction_id": null,
             "transaction_id": "vVM8kDVKE1cWbqed5qyeCDPQDqNKrZHarjvNb",
-            "transaction_type": "special"
+            "transaction_type": "special",
+            "product_name" : "credit card bill"
         },
         {
             "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
@@ -134,7 +135,8 @@
             "pending": false,
             "pending_transaction_id": null,
             "transaction_id": "ylM8pKlBGofKm5nNa57nCQJwQ5x6ADFkx9Kjw",
-            "transaction_type": "unresolved"
+            "transaction_type": "unresolved",
+            "product_name" : "Uber ride"
         },
         {
             "account_id": "zqaDbrq3kgf6qAVPaA7VToK57MlW9vFD1evNE",
@@ -169,7 +171,8 @@
             "pending": false,
             "pending_transaction_id": null,
             "transaction_id": "RgQx9MgbWETXqDN1vDpNcWPlWvq61oc78KPDk",
-            "transaction_type": "special"
+            "transaction_type": "special",
+            "product_name" : "Bank deposit transfer"
         },
         {
             "account_id": "BxD3mZx74aigBRMPoRdMfwgJloLVbzsqNkKMw",
@@ -201,7 +204,8 @@
             "pending": false,
             "pending_transaction_id": null,
             "transaction_id": "wVb8olVrWLcqAz1a9zZ1C6a56BJQWAHAJvEk7",
-            "transaction_type": "unresolved"
+            "transaction_type": "unresolved",
+            "product_name" : "Rock climbing equipment"
         },
         {
             "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
@@ -236,7 +240,8 @@
             "pending": false,
             "pending_transaction_id": null,
             "transaction_id": "mVg8PDVEQ4cWl7aRG7ZaC5lZ5B13nvtR6b4xJ",
-            "transaction_type": "special"
+            "transaction_type": "special",
+            "product_name" : "United Airlines Plane Ticket"
         },
         {
             "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
@@ -272,7 +277,8 @@
             "pending": false,
             "pending_transaction_id": null,
             "transaction_id": "nVM8jDVWZNcpqE4loEX4iBXqBMoZNxHPvd3rw",
-            "transaction_type": "place"
+            "transaction_type": "place",
+            "product_name" : "20 pc. Chicken McNuggets with fries"
         },
         {
             "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
@@ -308,7 +314,8 @@
             "pending": false,
             "pending_transaction_id": null,
             "transaction_id": "bV6mqXV7B5cqgzAKRzZACDobDg4PArHg85oaZ",
-            "transaction_type": "place"
+            "transaction_type": "place",
+            "product_name" : "Cup of coffee"
         },
         {
             "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
@@ -340,7 +347,8 @@
             "pending": false,
             "pending_transaction_id": null,
             "transaction_id": "GPyNmzP1e7iAEwlLmwzltVGBVZwQjbUJklGmX",
-            "transaction_type": "unresolved"
+            "transaction_type": "unresolved",
+            "product_name" : "sparkfun inventor's kit"
         },
         {
             "account_id": "rVgmZDVbpecge5jzk5DjfqXeZAJ5Q4tLVG5JL",
@@ -372,7 +380,8 @@
             "pending": false,
             "pending_transaction_id": null,
             "transaction_id": "9nd9Z7nBqlFKJDgrvDegCwa8w7m9gEIzjLqA9",
-            "transaction_type": "unresolved"
+            "transaction_type": "unresolved",
+            "product_name" : "Interest payment"
         },
         {
             "account_id": "BxD3mZx74aigBRMPoRdMfwgJloLVbzsqNkKMw",
@@ -407,7 +416,8 @@
             "pending": false,
             "pending_transaction_id": null,
             "transaction_id": "VAaN9LAKbnur8BeW1BgeTbqmb1V4Avsbz4qxJ",
-            "transaction_type": "special"
+            "transaction_type": "special",
+            "product_name" : "United Airlines ticket"
         },
         {
             "account_id": "KQ4lmdQg1MUKEdzDXd6zCWE8QN5A6Rfga5Bp7",
@@ -439,7 +449,8 @@
             "pending": false,
             "pending_transaction_id": null,
             "transaction_id": "A3xBmV3jadiBebJNVb5Jc4Xn45ZLzvHRz74Zd",
-            "transaction_type": "unresolved"
+            "transaction_type": "unresolved",
+            "product_name" : "Uber ride"
         },
         {
             "account_id": "BxD3mZx74aigBRMPoRdMfwgJloLVbzsqNkKMw",
@@ -471,7 +482,8 @@
             "pending": false,
             "pending_transaction_id": null,
             "transaction_id": "Da1dvqaQPNTGJ1eL91VeFBowBJPZpRHmbg4V5",
-            "transaction_type": "unresolved"
+            "transaction_type": "unresolved",
+            "product_name" : "Bioelectrode"
         },
         {
             "account_id": "BxD3mZx74aigBRMPoRdMfwgJloLVbzsqNkKMw",
@@ -507,7 +519,8 @@
             "pending": false,
             "pending_transaction_id": null,
             "transaction_id": "Xngj9GnkymFoxwZgzw8ZCN1WNyXxlEhpG41VA",
-            "transaction_type": "place"
+            "transaction_type": "place",
+            "product_name" : "8 Piece chicken only"
         },
         {
             "account_id": "BxD3mZx74aigBRMPoRdMfwgJloLVbzsqNkKMw",
@@ -539,7 +552,8 @@
             "pending": false,
             "pending_transaction_id": null,
             "transaction_id": "6We976WKRVcgD46om4l6fAK5A6RBJdUj4W1ND",
-            "transaction_type": "unresolved"
+            "transaction_type": "unresolved",
+            "product_name" : "Road bike cycling mountain bike"
         }
     ],
     "status_code": 200

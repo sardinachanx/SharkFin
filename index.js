@@ -13,10 +13,10 @@ var plaid = require('plaid');
 var transactions;
 
 var APP_PORT = envvar.number('APP_PORT', 8000);
-var PLAID_CLIENT_ID = envvar.string('PLAID_CLIENT_ID',"5a21a2ac4e95b836d37e3672");
-var PLAID_SECRET = envvar.string('PLAID_SECRET',"c8dbac9121245f93510d139d270519");
-var PLAID_PUBLIC_KEY = envvar.string('PLAID_PUBLIC_KEY',"b8ef71cf0f8b7bdfe6d8da3761a04a");
-var PLAID_ENV = envvar.string('PLAID_ENV', 'sandbox');
+var PLAID_CLIENT_ID = envvar.string('PLAID_CLIENT_ID',"5616c9f51abbf9e13f581fb2");
+var PLAID_SECRET = envvar.string('PLAID_SECRET',"488760dbd0560fbb10d5845bf03a24");
+var PLAID_PUBLIC_KEY = envvar.string('PLAID_PUBLIC_KEY',"505704614c705498646afea6bffe29");
+var PLAID_ENV = envvar.string('PLAID_ENV', 'production');
 
 // We store the access_token in memory - in production, store it in a secure
 // persistent data store
@@ -24,9 +24,8 @@ var ACCESS_TOKEN = null;
 var PUBLIC_TOKEN = null;
 var ITEM_ID = null;
 
-var debug = true;
+var debug = false;
 
-// Initialize the Plaid client
 var client = new plaid.Client(
   PLAID_CLIENT_ID,
   PLAID_SECRET,
@@ -72,8 +71,7 @@ app.post('/get_access_token', function(request, response, next) {
 });
 
 app.get('/accounts', function(request, response, next) {
-  // Retrieve high-level account information and account and routing numbers
-  // for each account associated with the Item.
+
   client.getAuth(ACCESS_TOKEN, function(error, authResponse) {
     if (error != null) {
       var msg = 'Unable to pull accounts from the Plaid API.';
@@ -92,8 +90,7 @@ app.get('/accounts', function(request, response, next) {
 });
 
 app.post('/item', function(request, response, next) {
-  // Pull the Item - this includes information about available products,
-  // billed products, webhook information, and more.
+
   client.getItem(ACCESS_TOKEN, function(error, itemResponse) {
     if (error != null) {
       console.log(JSON.stringify(error));
@@ -102,7 +99,6 @@ app.post('/item', function(request, response, next) {
       });
     }
 
-    // Also pull information about the institution
     client.getInstitutionById(itemResponse.item.institution_id, function(err, instRes) {
       if (err != null) {
         var msg = 'Unable to pull institution information from the Plaid API.';
@@ -121,8 +117,8 @@ app.post('/item', function(request, response, next) {
 });
 
 app.post('/transactions', function(request, response, next) {
-  // Pull transactions for the Item for the last 30 days
-  var startDate = moment().subtract(30, 'days').format('YYYY-MM-DD');
+
+  var startDate = moment().subtract(90, 'days').format('YYYY-MM-DD');
   var endDate = moment().format('YYYY-MM-DD');
   client.getTransactions(ACCESS_TOKEN, startDate, endDate, {
     count: 250,
@@ -136,8 +132,8 @@ app.post('/transactions', function(request, response, next) {
     }
 
     if(debug) transactions = transactionsResponse.transactions.concat(data1.transactions);
-    //console.log('pulled ' + transactionsResponse.transactions.length + ' transactions');
-    transactions = transactions.map(entry => purchase(entry.name, entry.amount, entry.date, entry.category_id));
+
+    transactions = transactions.map(entry => purchase.purchase(entry.product_name==null ? entry.name : entry.product_name, entry.amount, entry.date, entry.category_id));
     response.json(transactions);
   });
 });
